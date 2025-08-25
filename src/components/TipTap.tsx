@@ -11,7 +11,13 @@ import Underline from "@tiptap/extension-underline";
 import Subscript from "@tiptap/extension-subscript";
 import Superscript from "@tiptap/extension-superscript";
 
-const Tiptap = () => {
+const Tiptap = ({
+  content,
+  onChange,
+}: {
+  content: string;
+  onChange: (content: string) => void;
+}) => {
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -35,12 +41,15 @@ const Tiptap = () => {
       Subscript,
       Superscript,
     ],
-    content: "<p>Hello World! 🌎️</p>",
+    content: content,
     editorProps: {
       attributes: {
         class:
           "bg-slate-[#0a0a1f] border border-slate-500 text-slate-300 focus:border-slate-900 focus:outline-none rounded-sm min-h-32 p-8",
       },
+    },
+    onUpdate: ({ editor }) => {
+      onChange(editor.getHTML());
     },
     // Don't render immediately on the server to avoid SSR issues
     immediatelyRender: false,
