@@ -26,23 +26,26 @@ const RichTextEditor = ({
 
   return (
     <div className={className}>
-      <div className="mb-4 flex items-center justify-center gap-2 bg-blue-950/50 p-2">
+      <div className="mb-4 flex grow gap-2 px-6">
         <button
           onClick={() => handleEditorMode("edit")}
-          className={`text-md cursor-pointer rounded-lg px-3 py-1 shadow-lg transition duration-300 ease-in-out hover:bg-gray-900 ${editorMode === "edit" ? "bg-gray-900" : ""}`}
+          className={`cursor-pointer ${editorMode === "edit" ? "w-1/2 scale-110 bg-gray-900" : "flex w-1/2 items-center justify-center p-1"}`}
         >
           Edit
         </button>
-        <span className="h-full w-1 bg-gray-300">
+
+        {/* <span className="h-full w-1 bg-gray-300">
           <span className="h-full w-1 bg-gray-300">|</span>
-        </span>
+        </span> */}
+
         <button
           onClick={() => handleEditorMode("preview")}
-          className={`text-md cursor-pointer rounded-lg px-3 py-1 transition duration-300 ease-in-out hover:bg-gray-900 ${editorMode === "preview" ? "bg-gray-900" : ""}`}
+          className={`cursor-pointer ${editorMode === "preview" ? "w-1/2 scale-110 bg-gray-900" : "flex w-1/2 items-center justify-center p-1"}`}
         >
           Preview
         </button>
       </div>
+
       {editorMode === "edit" ? (
         <Tiptap content={content} onChange={handleContentChange} />
       ) : (
