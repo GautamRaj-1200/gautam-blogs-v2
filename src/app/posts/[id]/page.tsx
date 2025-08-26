@@ -1,5 +1,6 @@
 import { Post } from "@prisma/client";
 import "./PostPage.css";
+import SinglePostSkeleton from "@/components/SinglePostSkeleton";
 
 export default async function PostPage({
   params,
@@ -16,12 +17,19 @@ export default async function PostPage({
 
   return (
     <div className="mx-auto max-w-full px-4 py-8 md:max-w-5xl md:px-2">
-      <h1 className="mb-3 text-center text-2xl font-bold">{postData.title}</h1>
-      {/* Content is in HTML format */}
-      <div
-        dangerouslySetInnerHTML={{ __html: postData.content }}
-        className="render-html"
-      />
+      {postData ? (
+        <>
+          <h1 className="mb-3 text-center text-2xl font-bold">
+            {postData.title}
+          </h1>
+          <div
+            dangerouslySetInnerHTML={{ __html: postData.content }}
+            className="render-html"
+          />
+        </>
+      ) : (
+        <SinglePostSkeleton />
+      )}
     </div>
   );
 }

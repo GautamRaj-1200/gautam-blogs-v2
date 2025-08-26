@@ -1,11 +1,13 @@
 "use client";
 
 import PostCard from "@/components/PostCard";
+import PostCardSkeleton from "@/components/PostCardSkeleton";
 import { Post } from "@prisma/client";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [posts, setPosts] = useState<Post[]>([]);
+  const NumberOfSkeletonPosts = Array.from({ length: 10 }, (_, index) => index);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -22,9 +24,11 @@ export default function Home() {
         What follows are my learnings, thoughts, and personal perspective.
       </h1>
       <div className="flex flex-col gap-4 px-4">
-        {posts.map((post) => (
-          <PostCard key={post.id} post={post} />
-        ))}
+        {posts.length === 0
+          ? NumberOfSkeletonPosts.map((index) => (
+              <PostCardSkeleton key={index} />
+            ))
+          : posts.map((post) => <PostCard key={post.id} post={post} />)}
       </div>
     </section>
   );
