@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@clerk/backend": "^2.9.4",
+    "@clerk/nextjs": "^6.31.4",
     "@tiptap/extension-hard-break": "^3.3.0",
     "@tiptap/extension-highlight": "^3.3.0",
     "@tiptap/extension-link": "^3.3.0",

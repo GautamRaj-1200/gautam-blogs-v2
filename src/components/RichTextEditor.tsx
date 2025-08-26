@@ -4,6 +4,7 @@ import { useState } from "react";
 import Tiptap from "./TipTap";
 import Preview from "./Preview";
 import useEditorMode from "@/lib/hooks/useEditorMode";
+import "@/components/editor.css";
 
 interface RichTextEditorProps {
   initialContent?: string;
@@ -29,7 +30,7 @@ const RichTextEditor = ({
       <div className="mb-4 flex grow gap-2 px-6">
         <button
           onClick={() => handleEditorMode("edit")}
-          className={`cursor-pointer ${editorMode === "edit" ? "w-1/2 scale-110 bg-gray-900" : "flex w-1/2 items-center justify-center p-1"}`}
+          className={`cursor-pointer ${editorMode === "edit" ? "w-1/2 scale-110 bg-gray-800" : "flex w-1/2 items-center justify-center p-1"}`}
         >
           Edit
         </button>
@@ -40,7 +41,7 @@ const RichTextEditor = ({
 
         <button
           onClick={() => handleEditorMode("preview")}
-          className={`cursor-pointer ${editorMode === "preview" ? "w-1/2 scale-110 bg-gray-900" : "flex w-1/2 items-center justify-center p-1"}`}
+          className={`cursor-pointer ${editorMode === "preview" ? "w-1/2 scale-110 bg-gray-800" : "flex w-1/2 items-center justify-center p-1"}`}
         >
           Preview
         </button>
