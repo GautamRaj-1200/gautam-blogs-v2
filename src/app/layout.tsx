@@ -30,7 +30,7 @@ export default function RootLayout({
         <body
           className={`${spaceGrotesk.variable} ${sourGummy.variable} antialiased`}
         >
-          <header className="flex items-center justify-center border-b p-4">
+          <header className="sticky top-0 z-50 flex items-center justify-center p-4 shadow-md">
             <Link href="/">
               <h1 className="font-sour-gummy text-2xl font-bold">
                 Gautam Blogs

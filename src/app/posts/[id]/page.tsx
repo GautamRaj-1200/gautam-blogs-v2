@@ -16,7 +16,7 @@ export default async function PostPage({
 
   return (
     <div className="mx-auto max-w-full px-4 py-8 md:max-w-5xl md:px-2">
-      <h1 className="text-2xl font-bold">{postData.title}</h1>
+      <h1 className="text-center text-2xl font-bold">{postData.title}</h1>
       {/* Content is in HTML format */}
       <div
         dangerouslySetInnerHTML={{ __html: postData.content }}

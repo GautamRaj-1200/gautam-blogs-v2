@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <section className="mx-auto max-w-5xl py-8">
-      <h1 className="font-sour-gummy mb-8 px-4 text-center text-xl font-bold text-[var(--accent-color)]">
+      <h1 className="font-space-grotesk mb-8 px-4 text-center text-xl font-bold tracking-wide text-[var(--accent-color)]">
         What follows are my learnings, thoughts, and personal perspective.
       </h1>
       <div className="flex flex-col gap-4 px-4">

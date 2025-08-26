@@ -6,16 +6,16 @@ const PostCard = ({ post }: { post: Post }) => {
     <>
       <Link
         href={`/posts/${post.id}`}
-        className="flex items-center justify-between rounded-lg bg-[#0c1320] p-2 transition-colors duration-300 ease-in-out hover:bg-[#1a2330]"
+        className="flex flex-wrap items-center gap-4 rounded-lg bg-[#0c1320] p-2 transition-colors duration-300 ease-in-out hover:bg-[#1a2330] md:flex-nowrap md:justify-start"
       >
-        <h2 className="font-sour-gummy text-accent-color text-lg font-bold">
-          {post.title}
-        </h2>
-        <p className="font-sour-gummy text-sm text-gray-500">
+        <p className="font-space-grotesk hidden text-sm text-gray-500 md:block">
           {post.createdAt instanceof Date
             ? post.createdAt.toLocaleDateString()
             : new Date(post.createdAt).toLocaleDateString()}
         </p>
+        <h2 className="font-space-grotesk text-accent-color text-lg font-bold">
+          {post.title}
+        </h2>
       </Link>
     </>
   );
