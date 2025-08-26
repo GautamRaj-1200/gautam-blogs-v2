@@ -1,4 +1,4 @@
-import RichTextEditor from "@/components/RichTextEditor";
+import WriteForm from "@/components/WriteForm";
 import { auth } from "@clerk/nextjs/server";
 
 export default async function Write() {
@@ -10,11 +10,7 @@ export default async function Write() {
 
   return (
     <section className="mx-auto max-w-5xl py-8">
-      <RichTextEditor
-        onChange={(newContent: string) => {
-          console.log("Content changed:", newContent);
-        }}
-      />
+      <WriteForm />
     </section>
   );
 }
