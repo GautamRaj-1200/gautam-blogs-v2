@@ -19,6 +19,8 @@ import {
   Underline,
   Subscript,
   Superscript,
+  Link,
+  CornerDownLeft,
 } from "lucide-react";
 
 const MenuBar = ({ editor }: { editor: Editor | null }) => {
@@ -138,6 +140,18 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
         className={`${buttonBase} ${editor.isActive("superscript")} ? "is-active" : ""`}
       >
         <Superscript />
+      </button>
+      <button
+        onClick={() => editor.chain().focus().toggleLink().run()}
+        className={`${buttonBase} ${editor.isActive("link")} ? "is-active" : ""`}
+      >
+        <Link />
+      </button>
+      <button
+        onClick={() => editor.chain().focus().setHardBreak().run()}
+        className={`${buttonBase} ${editor.isActive("hardBreak")} ? "is-active" : ""`}
+      >
+        <CornerDownLeft />
       </button>
     </div>
   );

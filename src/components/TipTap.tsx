@@ -10,6 +10,8 @@ import Highlight from "@tiptap/extension-highlight";
 import Underline from "@tiptap/extension-underline";
 import Subscript from "@tiptap/extension-subscript";
 import Superscript from "@tiptap/extension-superscript";
+import Link from "@tiptap/extension-link";
+import { HardBreak } from "@tiptap/extension-hard-break";
 
 const Tiptap = ({
   content,
@@ -40,6 +42,12 @@ const Tiptap = ({
       Underline,
       Subscript,
       Superscript,
+      Link.configure({
+        HTMLAttributes: {
+          class: "text-blue-500",
+        },
+      }),
+      HardBreak,
     ],
     content: content,
     editorProps: {

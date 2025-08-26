@@ -15,7 +15,9 @@ export default function Home() {
       </section>
       <section className="mx-auto max-w-5xl py-8">
         <h2 className="text-lg font-bold">Content:</h2>
-        <pre className="rounded-md bg-gray-900 p-4">{content}</pre>
+        <div className="min-h-32 rounded-md bg-gray-900 p-4">
+          <div dangerouslySetInnerHTML={{ __html: content }} />
+        </div>
       </section>
     </>
   );
