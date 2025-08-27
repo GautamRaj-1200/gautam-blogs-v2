@@ -34,6 +34,6 @@ export async function POST(req: NextRequest) {
 
 // get all posts
 export async function GET() {
-  const posts = await prisma.post.findMany();
+  const posts = await prisma.post.findMany({ orderBy: { createdAt: "desc" } });
   return NextResponse.json(posts);
 }
